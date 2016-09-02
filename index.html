@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Docs-1 by YOTOV-LIMITED</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Docs-1</h1>
+      <h2 class="project-tagline">IBM Bluemix product documentation.</h2>
+      <a href="https://github.com/YOTOV-LIMITED/docs-1" class="btn">View on GitHub</a>
+      <a href="https://github.com/YOTOV-LIMITED/docs-1/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/YOTOV-LIMITED/docs-1/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="docs" class="anchor" href="#docs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>docs</h1>
+
+<p>IBM Bluemix product documentation.</p>
+
+<p>The docs repo is for the product content for IBM Bluemix that is authored in Markdown. The Bluemix <em>production</em> doc app builds all Markdown source from this location for all regions.</p>
+
+<p>Each directory in the docs repo must synch with the overall architecture of the Bluemix doc app.</p>
+
+<h2>
+<a id="how-to-suggest-changes-or-updates-to-bluemix-documentation" class="anchor" href="#how-to-suggest-changes-or-updates-to-bluemix-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How to suggest changes or updates to Bluemix documentation</h2>
+
+<p>All you need is a GitHub ID, and you can suggest edits and changes to Bluemix docs. A Bluemix team member will review any pull requests, and merge all or parts of your suggested changes as quickly as possible.
+To make your changes:</p>
+
+<pre><code>1. Fork the project or create a branch right from the repository.
+2. Edit files.
+3. When your changes are complete, send a pull request from your branch with your changes.
+4. Wait for a Bluemix team member to review your changes and merge all or parts of your suggested changes
+5. After you are notified of your changes, tidy up your branches using the delete button in the pull request or on the branches page.
+</code></pre>
+
+<p>For more detailed information on how to contribute content to Bluemix documentation, see the following flow:
+<a href="https://help.github.com/articles/github-flow-in-the-browser/">https://help.github.com/articles/github-flow-in-the-browser/</a></p>
+
+<h2>
+<a id="authoring-bluemix-content-in-markdown" class="anchor" href="#authoring-bluemix-content-in-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authoring Bluemix content in Markdown</h2>
+
+<h1></h1>
+
+<h2>
+<a id="purpose" class="anchor" href="#purpose" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Purpose</h2>
+
+<p>Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML.</p>
+
+<p>The Markdown used for Bluemix is based on GitHub-flavored Markdown. The following resources can be helpful in coding the markup for you content:</p>
+
+<ul>
+<li><a href="https://help.github.com/articles/markdown-basics/">https://help.github.com/articles/markdown-basics/</a></li>
+<li><a href="https://help.github.com/articles/github-flavored-markdown/">https://help.github.com/articles/github-flavored-markdown/</a></li>
+</ul>
+
+<p>Bluemix has designed a parser that transforms Markdown into HTML5. Because the syntax available in standard Markdown is limited, the Bluemix team has developed Extensions to provide an enhanced authoring experience. These extensions provide key features available in DITA today, adding, for example, the ability to use metadata attributes and content references in Markdown. This document provides instructions for using these extensions.</p>
+
+<h2>
+<a id="before-you-begin" class="anchor" href="#before-you-begin" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Before you begin</h2>
+
+<h3>
+<a id="markdown-editors" class="anchor" href="#markdown-editors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Markdown Editors</h3>
+
+<p>There are many free Markdown editors available, however, not all editors will honor the syntax used by Bluemix extensions. Notepad ++ is free, compatible, and also supports YAML, which is used to define content reference keywords.</p>
+
+<h1>
+<a id="mappings-between-dita-markdown-and-html-5" class="anchor" href="#mappings-between-dita-markdown-and-html-5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mappings between DITA, MarkDown, and HTML 5</h1>
+
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>XDITA</th>
+<th>HDITA</th>
+<th>MarkDown (Git flavored)</th>
+<th>HTML 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>container</strong></td>
+<td><code>&lt;topic&gt;</code></td>
+<td><code>&lt;article&gt;</code></td>
+<td><code>No equivalent</code></td>
+<td><code>&lt;article&gt;</code></td>
+</tr>
+<tr>
+<td><strong>title</strong></td>
+<td><code>&lt;title&gt;</code></td>
+<td><code>&lt;h1&gt;...&lt;h6&gt;</code></td>
+<td><code># ## ### ####</code></td>
+<td><code>&lt;h1&gt;...&lt;h6&gt;</code></td>
+</tr>
+<tr>
+<td><strong>short description</strong></td>
+<td><code>&lt;shortdesc&gt;</code></td>
+<td><code>&lt;p&gt;</code></td>
+<td><code>No equivalent, first thing under the title must be a paragraph of text</code></td>
+<td><code>&lt;p&gt;</code></td>
+</tr>
+<tr>
+<td><strong>body</strong></td>
+<td><code>&lt;body&gt;</code></td>
+<td><code>No equivalent (ignored)</code></td>
+<td><code>No equivalent</code></td>
+<td><code>--</code></td>
+</tr>
+<tr>
+<td><strong>section</strong></td>
+<td><code>&lt;section&gt;</code></td>
+<td><code>&lt;section&gt;</code></td>
+<td><code>No equivalent</code></td>
+<td><code>&lt;section&gt;</code></td>
+</tr>
+<tr>
+<td><strong>unordered list</strong></td>
+<td><code>&lt;ul&gt;</code></td>
+<td><code>&lt;ul&gt;</code></td>
+<td>
+<code>*</code> or <code>-</code><br><br><strong>Note</strong>: Nested lists need to be indented four spaces or a tab, and mixing ordered and unordered lists does not work (use html)</td>
+<td><code>&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;</code></td>
+</tr>
+<tr>
+<td><strong>ordered list</strong></td>
+<td><code>&lt;ol&gt;</code></td>
+<td><code>&lt;ol&gt;</code></td>
+<td>
+<code>1.</code><br>  <code>2.</code><br> <code>3.</code> <br><br><strong>Note</strong>: Nested lists need to be indented four spaces or a tab, and mixing ordered and unordered lists does not work (use html)</td>
+<td><code>&lt;ol&gt;&lt;li&gt;&lt;/li&gt;&lt;/ol&gt;</code></td>
+</tr>
+<tr>
+<td><strong>list item</strong></td>
+<td><code>&lt;li&gt;</code></td>
+<td><code>&lt;li&gt;</code></td>
+<td>
+<code>use the appropriate list type; nested lists are supported:</code><br> <code>1. Item 1</code><br> <code>1. A corollary to the above item.</code><br> <code>2. Yet another point to consider.</code><br><code>2. Item 2</code><br> <code>* A corollary that does not need to be ordered.</code><br>   <code>* This is indented four spaces, because it's two spaces further than the item above.</code><br>   <code>* You might want to consider making a new list.</code><br><code>3. Item 3</code>
+</td>
+<td>
+<code>&lt;ol&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;ol&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ol&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;ul&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ul&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ol&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>definition list</strong></td>
+<td><code>&lt;dl&gt;</code></td>
+<td><code>&lt;dl&gt;</code></td>
+<td><code>No equivalent</code></td>
+<td><code>&lt;dl&gt;</code></td>
+</tr>
+<tr>
+<td><strong>definition list entry</strong></td>
+<td><code>&lt;dlentry&gt;</code></td>
+<td><code>No equivalent (ignored)</code></td>
+<td><code>No equivalent</code></td>
+<td><code>--</code></td>
+</tr>
+<tr>
+<td><strong>term</strong></td>
+<td><code>&lt;dt&gt;</code></td>
+<td><code>&lt;dt&gt;</code></td>
+<td><code>no equivalent</code></td>
+<td><code>&lt;dt&gt;</code></td>
+</tr>
+<tr>
+<td><strong>definition</strong></td>
+<td><code>&lt;dd&gt;</code></td>
+<td><code>&lt;dd&gt;</code></td>
+<td><code>No equivalent</code></td>
+<td><code>&lt;dd&gt;</code></td>
+</tr>
+<tr>
+<td><strong>paragraph</strong></td>
+<td><code>&lt;p&gt;</code></td>
+<td><code>&lt;p&gt;</code></td>
+<td>No equivalent, Paragraphs in Markdown are just one or more lines of consecutive text followed by one or more blank lines.</td>
+<td><code>&lt;p&gt;</code></td>
+</tr>
+<tr>
+<td><strong>code</strong></td>
+<td><code>&lt;pre&gt;</code></td>
+<td><code>&lt;pre&gt;</code></td>
+<td><code>```code```</code></td>
+<td><pre><code></code></pre></td>
+</tr>
+<tr>
+<td><strong>syntax highlighting</strong></td>
+<td></td>
+<td></td>
+<td>
+<code>```</code> <br><code>ruby</code><br><code>require 'redcarpet'&lt;br&gt;markdown = Redcarpet.new("Hello World!")</code><br><code>puts markdown.to_html</code><br> <code>```</code>
+</td>
+<td>need to look into this one...or if the Bluemix usage of the Highlighter for Dojo and use the css styles from the highlighter.js removes the need to set a codeLanguage <br> <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml">Languages supported</a>
+</td>
+</tr>
+<tr>
+<td><strong>table</strong></td>
+<td></td>
+<td></td>
+<td>
+<code>Header 1</code>  <code>|</code> <code>Header 2</code> <br> ------------- <code>|</code> ------------- <br> <code>Content</code>  <code>|</code> <code>Content</code> <br> <code>Content</code>  <code>|</code> <code>Content</code> <br> <strong>Notes</strong>: <br>1. Your cells do not need to line up on the page in Markdown when editing. <br>2. Tables in Markdown do not support explicit line breaks. To cheat, you can use the <code>&lt;br&gt;</code> HTML tag.</td>
+<td>
+<code>&lt;table&gt;</code><br><code>&lt;thead&gt;</code><br><code>&lt;tr&gt;</code><br><code>&lt;th&gt;Header 1&lt;/th&gt;</code><br><code>&lt;th&gt;Header 2&lt;/th&gt;</code><br><code>&lt;/tr&gt;</code><br><code>&lt;/thead&gt;</code><br><code>&lt;tbody&gt;</code><br><code>&lt;tr&gt;</code><br><code>&lt;td&gt;</code><br><code>Content&lt;/td&gt;</code><br><code>&lt;td&gt;Content&lt;/td&gt;</code><br><code>&lt;/tr&gt;</code><br><code>&lt;/tbody&gt;</code><br><code>&lt;/table&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>italics</strong></td>
+<td><code>&lt;i&gt;</code></td>
+<td></td>
+<td><code>*italic*</code></td>
+<td><code>&lt;em&gt;</code></td>
+</tr>
+<tr>
+<td><strong>bold</strong></td>
+<td><code>&lt;b&gt;</code></td>
+<td></td>
+<td><code>**bold**</code></td>
+<td><code>&lt;strong&gt;</code></td>
+</tr>
+<tr>
+<td><strong>strikethrough</strong></td>
+<td></td>
+<td></td>
+<td><code>~~strikethrough~~</code></td>
+<td><code>&lt;del&gt;</code></td>
+</tr>
+<tr>
+<td><strong>monospace</strong></td>
+<td></td>
+<td></td>
+<td><code>monospace</code></td>
+<td><code>&lt;code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>links</strong></td>
+<td></td>
+<td></td>
+<td>You can create an inline link by wrapping link text in brackets <code>( [ ] )</code>, and then wrapping the link in parenthesis <code>( ( ) )</code>. <br><br> GFM will autolink standard URLs, so if you want to link to a URL (instead of setting link text), you can simply enter the URL and it will be turned into a link to that URL. <br><br><strong>Note</strong>: to create an external link that opens in a new window, place the following attribute defintion at the top of your file: <code>{:new_window: target="_blank"}</code> and then use the following attribute after your link <code>[link](url){: new_window}</code>
+</td>
+<td><code>&lt;a href="https://www.link.com"&gt;Link Text&lt;/a&gt;</code></td>
+</tr>
+<tr>
+<td><strong>blockquote</strong></td>
+<td></td>
+<td></td>
+<td>
+<code>In the words of Abraham Lincoln:</code><br><code>&gt; Pardon my french</code>
+</td>
+<td>
+<code>&lt;blockquote&gt;</code><br><code>&lt;p&gt;text&lt;/p&gt;</code><br><code>&lt;/blockquote&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>image</strong></td>
+<td></td>
+<td></td>
+<td><code>![alt text for my graphic](images/image_name.jpg)</code></td>
+<td><code>&lt;p&gt;&lt;img src="images/1.png" alt="alt text"&gt;&lt;/p&gt;</code></td>
+</tr>
+<tr>
+<td><strong>video</strong></td>
+<td></td>
+<td></td>
+<td>
+<code>&lt;video width="400px" controls&gt;</code><br><code>&lt;source src="mov_bbb.mp4" type="video/mp4"&gt;</code><br><code>&lt;source src="mov_bbb.ogg" type="video/ogg"&gt;</code><br><code>Your browser does not support HTML5 video.</code><br><code>&lt;/video&gt;</code>
+</td>
+<td>
+<code>&lt;video width="400px" controls&gt;</code><br><code>&lt;source src="video/BlueMix Mobile Data iOS Demo v2.mp4" type="video/mp4"&gt;</code><br><code>Your browser does not support HTML5 video.</code><br><code>&lt;/video&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>keywords</strong></td>
+<td>
+<code>&lt;prolog&gt;</code><br><code>&lt;metadata&gt;</code><br><code>&lt;keywords&gt;</code><br><code>&lt;indexterm&gt;</code><br><code>keyword</code><br><code>&lt;/indexterm&gt;</code><br><code>&lt;/keywords&gt;</code><br><code>&lt;/metadata&gt;</code><br><code>&lt;/prolog&gt;</code>
+</td>
+<td></td>
+<td><code>currently not available</code></td>
+<td><code>&lt;meta name="keywords" content="keyword"&gt;</code></td>
+</tr>
+<tr>
+<td><strong>metadata</strong></td>
+<td></td>
+<td></td>
+<td><code>{{site.data.product.bluemix}}</code></td>
+<td><code>data-hd-metadata</code></td>
+</tr>
+<tr>
+<td><strong>comments</strong></td>
+<td></td>
+<td></td>
+<td><code>&lt;!-– comment --&gt;</code></td>
+<td><code>&lt;!-– comment --&gt;</code></td>
+</tr>
+<tr>
+<td><strong>mdash</strong></td>
+<td></td>
+<td></td>
+<td><code>no equivalent</code></td>
+<td><code>&amp;mdash;</code></td>
+</tr>
+</tbody>
+</table>
+
+<h1>
+<a id="mappings-for-how-to-code-in-dita-vs-markdown" class="anchor" href="#mappings-for-how-to-code-in-dita-vs-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Mappings for how to code in DITA vs Markdown</h1>
+
+<table>
+<thead>
+<tr>
+<th>Dita Element</th>
+<th>HTML 5 output from Dita</th>
+<th>How to code in Markdown</th>
+<th>HTML 5 output from Markdown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>codeblock</strong></td>
+<td><code>&lt;pre class="codeblock"&gt;</code></td>
+<td>
+<code>```code```</code> <br><code>{: codeblock}</code><br><strong>Note:</strong> This requires the following attribute definition available in the attribute definition template: <code>{:codeblock: .codeblock}</code>
+</td>
+<td>
+<code>&lt;pre class="codeblock"&gt;</code><br><code>&lt;code&gt;code&lt;/code&gt;</code><br><code>&lt;/pre&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>pre</strong></td>
+<td><code>&lt;pre class="pre"&gt;</code></td>
+<td>
+<code>```code```</code> <br><code>{: pre}</code><br><strong>Note:</strong> This requires the following attribute definition available in the attribute definition template: <code>{:pre: .pre}</code>
+</td>
+<td>
+<code>&lt;pre&gt;</code><br><code>&lt;code&gt;code&lt;/code&gt;</code><br><code>&lt;/pre&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>systemoutput</strong></td>
+<td><code>&lt;samp class="ph systemoutput"&gt;</code></td>
+<td><code>`systemoutput`</code></td>
+<td><code>&lt;code&gt;systemoutput&lt;/code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>codeph</strong></td>
+<td><code>&lt;samp class="ph codeph"&gt;</code></td>
+<td><code>`codeph`</code></td>
+<td><code>&lt;code&gt;codeph&lt;/code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>userinput</strong></td>
+<td><code>&lt;kbd class="ph userinput"&gt;</code></td>
+<td><code>`userinput`</code></td>
+<td><code>&lt;code&gt;userinput&lt;/code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>screen</strong></td>
+<td><code>&lt;pre class="pre screen"&gt;&lt;code&gt;screen&lt;/code&gt;&lt;/pre&gt;</code></td>
+<td>
+<code>```code```</code> <br><code>{: screen}</code><br><strong>Note:</strong> This requires the following attribute definition available in the attribute definition template: <code>{:screen: .screen}</code>
+</td>
+<td>
+<code>&lt;pre class="screen"&gt;</code><br><code>&lt;code&gt;code&lt;/code&gt;</code><br><code>&lt;/pre&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>cmdname</strong></td>
+<td><code>&lt;span class="keyword cmdname"&gt;cmdname&lt;/span&gt;</code></td>
+<td><code>**cmdname**</code></td>
+<td><code>&lt;strong&gt;cmdname&lt;/strong&gt;</code></td>
+</tr>
+<tr>
+<td><strong>varname</strong></td>
+<td><code>&lt;span class="keyword varname"&gt;varname&lt;/span&gt;</code></td>
+<td><code>*varname*</code></td>
+<td><code>&lt;em&gt;varname&lt;/em&gt;</code></td>
+</tr>
+<tr>
+<td><strong>option</strong></td>
+<td><code>&lt;span class="keyword option"&gt;option&lt;/span&gt;</code></td>
+<td><code>`option`</code></td>
+<td><code>&lt;code&gt;option&lt;/code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>parml</strong></td>
+<td>
+<code>&lt;dl class="parml"&gt;&lt;dt class="pt dlterm"&gt;pt&lt;/dt&gt;</code><br><code>&lt;dd class="pd"&gt;pd&lt;/dd&gt;</code><br><code>&lt;/dl&gt;</code>
+</td>
+<td>
+<code>**title**</code><br>definition</td>
+<td>
+<code>&lt;p&gt;&lt;strong&gt;parameter title&lt;/strong&gt;</code><br><code>Definition of the parameter&lt;/p&gt;</code>
+</td>
+</tr>
+<tr>
+<td><strong>uicontrol</strong></td>
+<td><code>&lt;span class="ph uicontrol"&gt;uicontrol&lt;/span&gt;</code></td>
+<td><code>**uicontrol**</code></td>
+<td><code>&lt;strong&gt;uicontrol&lt;/strong&gt;</code></td>
+</tr>
+<tr>
+<td><strong>menucascade</strong></td>
+<td><code>&lt;span class="ph uicontrol"&gt;uicontrol &amp;gt; uicontrol&lt;/span&gt;</code></td>
+<td><code>**uicontrol &amp;gt; uicontrol**</code></td>
+<td><code>&lt;strong&gt;uicontrol &amp;gt; uicontrol&lt;/strong&gt;</code></td>
+</tr>
+<tr>
+<td><strong>apiname</strong></td>
+<td><code>&lt;span class="keyword apiname"&gt;apiname&lt;/span&gt;</code></td>
+<td><code>`apiname`</code></td>
+<td><code>&lt;code&gt;apiname&lt;/code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>filepath</strong></td>
+<td><code>&lt;span class="ph filepath"&gt;filepath&lt;/span&gt;</code></td>
+<td><code>`filepath`</code></td>
+<td><code>&lt;code&gt;filepath&lt;/code&gt;</code></td>
+</tr>
+<tr>
+<td><strong>shortdesc</strong></td>
+<td><code>&lt;shortdesc&gt;   &lt;p class="shortdesc"&gt;</code></td>
+<td>This is a shortdesc paragraph<br><code>{: shortdesc}</code><br><strong>Note:</strong> This requires the following attribute definition available in the attribute definition template: <code>{:shortdesc: .shortdesc}</code>
+</td>
+<td><code>&lt;p class="shortdesc"&gt;</code></td>
+</tr>
+<tr>
+<td><strong>term</strong></td>
+<td><code>&lt;span class="ph term"&gt;term&lt;/span&gt;</code></td>
+<td><code>*term*</code></td>
+<td><code>&lt;em&gt;term&lt;/em&gt;</code></td>
+</tr>
+</tbody>
+</table>
+
+<h1>
+<a id="bluemix-special-mappings-for-how-to-code-in-dita-vs-markdown" class="anchor" href="#bluemix-special-mappings-for-how-to-code-in-dita-vs-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bluemix special mappings for how to code in DITA vs Markdown</h1>
+
+<table>
+<thead>
+<tr>
+<th>Dita Element</th>
+<th>HTML 5 output from Dita</th>
+<th>How to code in Markdown</th>
+<th>HTML 5 output from Markdown</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>Bluemix Messages</strong><br>msg<br><br>msgBody<br><br>msgID<br><br>msgPrefix<br><br>msgNumber<br><br>msgSuffix<br><br>msgExplanation<br><br>msgUserResponse</td>
+<td>
+<code>&lt;section class="section section msgExplanation"&gt;Explanation:</code><br><br><code>&lt;section class="section section msgUserResponse"&gt;Action:</code>
+</td>
+<td>
+<code>`msgph`</code> <br><br> <code>&gt;</code>msgblock of text<br><code>&gt;</code>this is more text<br><code>&gt;</code>and some more text<br><br><code>## BXNUI0001E</code><br><code>**The attempt to determine whether a session exists failed.**</code><br><br>For instructions to fix this problem, see this <code>[troubleshooting topic](https://www.ng.bluemix.net/docs/troubleshoot/index-gentopic3.html#tr_err)</code>.</td>
+<td>
+<code>&lt;code&gt;msgph&lt;/code&gt;</code><br><code>&lt;h2 id="bxnui0001e"&gt;BXNUI0001E&lt;/h2&gt;</code><br><code>&lt;p&gt;&lt;b&gt;The attempt to determine whether a session exists failed.&lt;/b&gt;&lt;/p&gt;</code><br><code>&lt;p&gt;For instructions to fix this problem, see this &lt;a href="https://www.ng.bluemix.net/docs/troubleshoot/index-gentopic3.html#tr_err"&gt;troubleshooting topic&lt;/a&gt;.&lt;/p&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>DITA troubleshooting specialization</strong><br><br>tsSymptom<br><br>tsCauses<br><br>tsResolve</td>
+<td>
+<code>&lt;section class="section tsSymptoms"&gt;What's happening</code><br><br><code>&lt;section class="section tsCauses"&gt;Why it's happening</code><br><br><code>&lt;section class="section tsResolve"&gt;How to fix it</code>
+</td>
+<td>This is the "What's happening" paragraph <br><code>{: tsSymptoms}</code><br>This is the "Why it's happening" paragraph <br><code>{: tsCauses}</code><br>This is the "How to fix it" paragraph <br><code>{: tsResolve}</code><br><br><strong>Note:</strong> This requires the following attribute definitions available in the attribute definition template: <br><code>{:tsSymptoms: .tsSymptoms}</code><br><code>{:tsCauses: .tsCauses}</code><br><code>{:tsResolve: .tsResolve}</code>
+</td>
+<td>
+<code>&lt;p class="tsSymptoms"&gt;This is the "What's happening" paragraph&lt;/p&gt;</code><br><br><code>&lt;p class="tsCauses"&gt;This is the "Why it's happening" paragraph&lt;/p&gt;</code><br><br><code>&lt;p class="tsResolve"&gt;This is the "How to fix it" paragraph&lt;/p&gt;</code><br><br>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Bluemix Runtime Classes</strong><br><a href="https://www.ng.bluemix.net/docs/starters/rt_landing.html">More Information</a><br>
+</td>
+<td>
+<code>&lt;ul class="runtimeIconList"&gt;</code><br><code>&lt;p class="runtimeIcon"&gt;</code><br><code>&lt;p class="runtimeTitle"&gt;</code><br><code>&lt;p class="runtimeLink"&gt;</code>
+</td>
+<td>
+<code>*list item 1</code><br><code>*list item 2</code><br><code>{: runtimeIconList}</code> <br><br>Paragraph of text<br><code>{: runtimeIcon}</code><br><br>Paragraph of text<br><code>{: runtimeTitle}</code><br><br>Paragraph of text<br><code>{: runtimeLink}</code><br><br><strong>Note:</strong> This requires the following attribute definitions available in the attribute definition template: <br><code>{:runtimeIconList: .runtimeIconList}</code><br><code>{:runtimeIcon: .runtimeIcon}</code><br><code>{:runtimeTitle: .runtimeTitle}</code><br><code>{:runtimeLink: .runtimeLink}</code>
+</td>
+<td>
+<code>&lt;ul class="runtimeIconList"&gt;</code><br><code>&lt;li&gt;list item 1&lt;/li&gt;</code><br><code>&lt;li&gt;list item 2&lt;/li&gt;&lt;/ul&gt;</code><br><br><code>&lt;p class="runtimeIcon"&gt;Paragraph of text&lt;/p&gt;</code><br><code>&lt;p class="runtimeTitle"&gt;Paragraph of text&lt;/p&gt;</code><br><code>&lt;p class="runtimeLink"&gt;Paragraph of text&lt;/p&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Bluemix Related Links</strong> <br><br><code>id="rellinks"</code><br>id of wrapper tag of all related links section<br><br> <code>id='general'</code><br>id of RELATED LINKS<br><br><code>id='api'</code><br>id of API REFERENCE<br><br><code>id='samples'</code><br>id of TUTORIALS AND SAMPLES<br><br><code>id='buildpacks'</code><br>id of COMPATIBLE RUNTIMES<br><br><code>id='sdk'</code><br>id of SDK REFERENCE</td>
+<td>
+<code>&lt;article class="topic reference nested1" aria-labelledby="d68e338" lang="en-us" id="rellinks"&gt;&lt;h2 class="topictitle2" id="d68e338"&gt;Related links&lt;/h2&gt;</code><br><code>&lt;aside&gt;</code><br><code>&lt;div class="linklist" id="general"&gt;&lt;h3 class="linklistlabel"&gt;Related Links&lt;/h3&gt;</code><br><code>&lt;ul&gt;&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/personality-insights" rel="external" title="(Opens in a new tab or window)"&gt;Detailed Documentation&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/personality-insights.html" rel="external" title="(Opens in a new tab or window)"&gt;&lt;span class="keyword"&gt;Personality Insights&lt;/span&gt; home page&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="https://developer.ibm.com/watson/" rel="external" title="(Opens in a new tab or window)"&gt;Watson developer cloud community&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;/ul&gt;&lt;/div&gt;</code><br><br><code>&lt;div class="linklist" id="samples"&gt;&lt;h3 class="linklistlabel"&gt;Tutorials and Samples&lt;/h3&gt;</code><br><code>&lt;ul&gt;&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="https://watson-pi-demo.mybluemix.net/" rel="external" title="(Opens in a new tab or window)"&gt;Live Demo&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/doc/personality-insights/index.html#sampleApp" rel="external" title="(Opens in a new tab or window)"&gt;Sample Application source and instructions&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="https://github.com/watson-developer-cloud/nodejs-wrapper" rel="external" title="(Opens in a new tab or window)"&gt;Client-side library for Watson in Node.js&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="https://github.com/watson-developer-cloud/java-wrapper" rel="external" title="(Opens in a new tab or window)"&gt;Client-side library for Watson in Java&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;/ul&gt;&lt;/div&gt;</code><br><br><code>&lt;div class="linklist" id="api"&gt;&lt;h3 class="linklistlabel"&gt;API Reference&lt;/h3&gt;</code><br><code>&lt;ul&gt;&lt;li&gt;&lt;img src="./sout.gif" alt=""&gt;&lt;a href="http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/apis/#!/personality-insights" rel="external" title="(Opens in a new tab or window)"&gt;REST API&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;/ul&gt;&lt;/div&gt;</code><br><code>&lt;/aside&gt;&lt;/article&gt;</code>
+</td>
+<td>
+<code># rellinks</code><br><br><code>## samples</code><br><code>* [link text](http://URL)</code><br><code>* [link text](http://URL)</code><br><br><code>## sdk</code><br><code>* [link text](http://URL)</code><br><code>* [link text](http://URL)</code><br><br><code>## api</code><br><code>* [link text](http://URL)</code><br><code>* [link text](http://URL)</code><br><br><code>## buildpacks</code><br><code>* [link text](http://URL)</code><br><code>* [link text](http://URL)</code><br><br><code>## general</code><br><code>* [link text](http://URL)</code><br><code>* [link text](http://URL)</code>
+</td>
+<td>
+<code>&lt;h1 id="rellinks"&gt;rellinks&lt;/h1&gt;</code><br><code>&lt;h2 id="samples"&gt;samples&lt;/h2&gt;</code><br><code>&lt;ul&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ul&gt;</code><br><br><code>&lt;h2 id="sdk"&gt;sdk&lt;/h2&gt;</code><br><code>&lt;ul&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ul&gt;</code><br><br><code>&lt;h2 id="api"&gt;api&lt;/h2&gt;</code><br><code>&lt;ul&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ul&gt;</code><br><br><code>&lt;h2 id="buildpacks"&gt;buildpacks&lt;/h2&gt;</code><br><code>&lt;ul&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;li&gt;</code><br><code>&lt;/ul&gt;</code><br><br><code>&lt;h2 id="general"&gt;general&lt;/h2&gt;</code><br><code>&lt;ul&gt;</code><br><code>&lt;li&gt;&lt;a href="http://www.softlayer.com/security"&gt;Soflayer Security Compliance&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;li&gt;&lt;a href="../services/SingleSignOn/index.html"&gt;Getting started with Single Sign On&lt;/a&gt;&lt;/li&gt;</code><br><code>&lt;/ul&gt;</code>
+</td>
+</tr>
+<tr>
+<td>
+<strong>Bluemix Context Switching</strong><br><br><code>data-hd-programlang="languagecode"</code><br><code>//programming language and OS</code><br><code>csAllProgramlangs: [</code><br><code>{key:"generic", label:"Generic"},</code><br><code>{key:"java", label:"Java"},</code><br><code>{key:"ruby", label:"Ruby"},</code><br><code>{key:"c#", label:"C#"},</code><br><code>{key:"objectc", label:"Objective C"},</code><br><code>{key:"python", label:"Python"},</code><br><code>{key:"javascript", label:"JavaScript"},</code><br><code>{key:"php", label:"PHP"},</code><br><code>{key:"swift", label:"Swift"}</code><br><code>],</code><br><code>csAllOperatingsystems: [</code><br><code>{key:"generic", label:"Generic"},</code><br><code>{key:"ios", label:"iOS"},</code><br><code>{key:"android", label:"Android"}</code><br><code>],</code>
+</td>
+<td>
+<code>&lt;pre class="codeblock"</code><br><code>data-hd-programlang="javascript"&gt;&lt;code&gt;&amp;lt;script&amp;gt;</code><br><br><code>var setup = {</code><br><code>applicationId:'&amp;lt;&lt;var class="keyword varname"&gt;applicationId&lt;/var&gt;&amp;gt;',</code><br><code>applicationRoute:'&amp;lt;&lt;var class="keyword varname"&gt;applicationRoute&lt;/var&gt;&amp;gt;',</code><br><code>applicationSecret:'&amp;lt;&lt;var class="keyword varname"&gt;applicationSecret&lt;/var&gt;&amp;gt;'</code><br><code>}</code><br><br><code>IBMBluemix.initialize(setup);</code><br><code>&amp;lt;/script&amp;gt;&lt;/code&gt;</code><br><code>&lt;/pre&gt;</code><br><br><code>&lt;pre class="codeblock" data-hd-operatingsystem="ios"&gt;&lt;code&gt;[IBMBluemix initializeWithApplicationId: &lt;var class="keyword varname"&gt;applicationId&lt;/var&gt; andApplicationSecret: &lt;var class="keyword varname"&gt;applicationSecret&lt;/var&gt; andApplicationRoute: &lt;var class="keyword varname"&gt;applicationRoute&lt;/var&gt;]&lt;/code&gt;&lt;/pre&gt;</code>
+</td>
+<td>
+<code>&lt;!-- Attribute definitions --&gt;</code><br><code>{:javascript: #javascript .ph data-hd-programlang='javascript'}</code><br><code>{:java: #java .ph data-hd-programlang='java'}</code><br><code>{:ruby: #ruby .ph data-hd-programlang='ruby'}</code><br><code>{:shortdescription: .shortdesc}</code><br><br><code>&lt;!-- Applying the above definitions to inline code tags and paragraph tags --&gt;</code><br><code>You can use the</code>Node.js<code>{: javascript}</code>Java<code>{: java}</code>Ruby<code>{: ruby} sample application to try the RabbitMQ service.</code><br><code>{: shortdescription}</code><br><br><strong>Note:</strong> This requires attribute definitions available in the attribute definition template.</td>
+<td><code>&lt;p class="shortdesc"&gt;You can use the &lt;code id="javascript" class="ph" data-hd-programlang="javascript"&gt;Node.js&lt;/code&gt; &lt;code id="java" class="ph" data-hd-programlang="java"&gt;Java&lt;/code&gt; &lt;code id="ruby" class="ph" data-hd-programlang="ruby"&gt;Ruby&lt;/code&gt; sample application to try the RabbitMQ service.&lt;/p&gt;</code></td>
+</tr>
+<tr>
+<td>
+<strong>Bluemix App Data</strong><br><br><code>user's app related metadata: "app_name", "app_url", "service_name", "service_instance_name", "plan", "host"</code>
+</td>
+<td>?</td>
+<td>?<br><strong>Note:</strong> This requires the following attribute definition available in the attribute definition template: <code>{:?: .?}</code>
+</td>
+<td>?</td>
+</tr>
+</tbody>
+</table>
+
+<h1>
+<a id="bluemix-extensions" class="anchor" href="#bluemix-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bluemix Extensions</h1>
+
+<p>The following Bluemix extensions to Markdown are supported:</p>
+
+<ul>
+<li>Output all MarkDown markup to standard, valid HTML5 tags</li>
+<li>Attributes</li>
+<li>Addition of headers and footers to the HTML output</li>
+<li>Anchor IDs Generated for all Headers</li>
+<li>Content References</li>
+<li>TOC file</li>
+<li>Output is fully accessible</li>
+<li>Additional functionality</li>
+</ul>
+
+<h3>
+<a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Attributes</h3>
+
+<p>The Bluemix Markdown parser allows you to define additional attributes in Markdown. After your attributes are defined, you can apply these values to any markdown element, like headers, paragraphs, and codeblocks. </p>
+
+<p>You can use the Bluemix attributes extension to map the following attributes to an element:</p>
+
+<ul>
+<li>ID</li>
+<li>Class</li>
+<li>Custom value</li>
+</ul>
+
+<p><strong>Note</strong>: Attributes, when defined and applied within a Markdown file, are output by the Bluemix Markdown parser by default. No additional parameters or flags need to be passed to the parser when the command is run.</p>
+
+<h4>
+<a id="how-attributes-are-defined-in-markdown" class="anchor" href="#how-attributes-are-defined-in-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How attributes are defined in Markdown</h4>
+
+<p>Attributes are defined at the top of your Markdown file. Each Attribute definition must be enclosed in curly brackets { }, and must contain a unique name. While you can provide attribute definition values for ID, Class, and Custom, none of these values are required, and you can define any combination of these different attribute values. The Bluemix Attribute Definitions implimentation is based on the Kramdown / Maraku Attribute Definiton extension: (<a href="http://kramdown.gettalong.org/syntax.html#attribute-list-definitions">http://kramdown.gettalong.org/syntax.html#attribute-list-definitions</a>).</p>
+
+<p>For Example:</p>
+
+<pre><code>&lt;!-- Attribute definition --&gt; 
+{:Name: #ID .Class Custom='custom attribute'}
+&lt;!-- Sample Attribute definition --&gt; 
+{:java: #java .ph data-hd-programlang='java'}
+
+</code></pre>
+
+<ul>
+<li>
+<strong>:Name:</strong> is the name of the attribute. This value does not get passed through to the output, it is an internal Markdown name that is used to map the attribute definition at the top of the page to one or more uses throughout the Markdown file. This value must be surrounded by colons (: :).</li>
+<li>
+<strong>#ID</strong> sets a value associated with the <code>id</code> attribute. This value is optional. If I define an ID of <code>#java</code> in my attribute, and I set this attribute on a Header, the HTML5 output will produce <code>&lt;h1 id="java"&gt;&lt;/h1&gt;</code>. This value must begin with a pound sign (#).</li>
+<li>
+<strong>.Class</strong> sets a value associated with the Class attribute. This value is optional. If I define a Class of <code>.ph</code> in my attribute, and I set this attribute on a Header, the HTML5 output will produce <code>&lt;h1 Class="ph"&gt;&lt;/h1&gt;</code>. This value must begin with a pound period (.).</li>
+<li>
+<strong>.Custom</strong> sets a custom attribute value. This value is optional. If I define a Custom value of <code>data-hd-programlang='java'</code> in my attribute, and I set this attribute on a Header, the HTML5 output will produce <code>&lt;h1 data-hd-programlang='java'&gt;&lt;/h1&gt;</code>. </li>
+</ul>
+
+<h4>
+<a id="how-attributes-are-applied-in-markdown" class="anchor" href="#how-attributes-are-applied-in-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How attributes are applied in Markdown</h4>
+
+<p>After you define your attribute at the top of your Markdown file, you can apply the attribute by adding a call to the name of your attribute to the end of the Markdown tag you want to bind your attribute to. The implimentation of Bluemix attribute usage is based on the Kramdown / Maraku Block/Span Inline Attribute Lists: <a href="http://kramdown.gettalong.org/syntax.html#inline-attribute-lists">http://kramdown.gettalong.org/syntax.html#inline-attribute-lists</a></p>
+
+<p>To apply a defined attribute, call the name of the attribute surrounded by curly brackets, and pre-pended by a colon and a space: <code>{: Name}</code></p>
+
+<p>For example:
+I define a short description attribute at the top of my file and then apply it to a paragraph:</p>
+
+<pre><code> {:shortdescription: .shortdesc}
+
+ This is a short description paragraph
+ {: shortdescription}
+
+</code></pre>
+
+<p>The Markdown parser will output HTML5 that looks like this:</p>
+
+<pre><code>&lt;p class="shortdesc"&gt;This is a short description paragraph&lt;/p&gt;
+
+</code></pre>
+
+<h4>
+<a id="attributes-in-dita-vs-markdown" class="anchor" href="#attributes-in-dita-vs-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Attributes in DITA vs Markdown</h4>
+
+<p>In DITA, attributes are used to add metadata to elements. For example, you might add a <code>product</code>, <code>props</code>, or <code>otherprops</code> attribute on a phrase or paragraph element in order to associate a value with that phrase or paragraph. These values allow for filtering either during build or runtime. DITA transforms to HTML5 also apply Class attributes to HTML5 elements, and these values are used by the .CSS stylesheets at runtime to control the display.</p>
+
+<p>Example of DITA attributes (from <code>using_rabbitmq_service.dita</code>):
+Here we can see that the author has added a <code>props</code> attribute to 3 phrase tags, and added a unique programming language value to each <code>prop</code>.</p>
+
+<pre><code>&lt;shortdesc&gt;You can use the &lt;ph props="programlang(javascript)"&gt;Node.js&lt;/ph&gt; &lt;ph
+props="programlang(java)"&gt;Java&lt;/ph&gt; &lt;ph props="programlang(ruby)"&gt;Ruby&lt;/ph&gt; sample
+application to try the &lt;keyword
+conref="cloudoeconrefs.dita#cloudoeconrefs/rabbitmq"&gt;RabbitMQ&lt;/keyword&gt; service.&lt;/shortdesc&gt;
+
+</code></pre>
+
+<p>HTML5 output transformed with IDWB:</p>
+
+<pre><code>&lt;p class="shortdesc"&gt;You can use the &lt;span class="ph" data-hd-programlang="javascript"&gt;Node.js&lt;/span&gt; &lt;span class="ph" data-hd-programlang="java"&gt;Java&lt;/span&gt; &lt;span class="ph" data-hd-programlang="ruby"&gt;Ruby&lt;/span&gt; sample
+application to try the &lt;span class="keyword"&gt;RabbitMQ&lt;/span&gt; service.&lt;/p&gt;
+
+</code></pre>
+
+<p>In Markdown, the Bluemix parser will apply whatever attributes you define to any of the supported Markdown elements, (For example, Header, Paragraph, Codeblock, Blockquote, Inline Code, Bold, Italics, Table, etc.). While Markdown does not support the Phrase tag, you can still bind attributes to single words or phrases by using inline tags like Code, Bold, or Italics.</p>
+
+<p>The Bluemix doc framework provides runtime context switching functionality that looks for attributes on HTML5 elements and hides or displays this content depending on selections made by the user. Support for context switching in Markdown source is just one of the ways writers can use the Bluemix attribute extension. In addition, writers can add anchor IDs to multiple elements, overwrite anchor IDs on headers, add Class attributes like <code>shortdesc</code> to a paragraph to define the output as a shortdescription, as well as define their own custom attribute values on supported elements.</p>
+
+<p>Example of Markdown attributes definitions and applications (from <code>using_rabbitmq_service.md</code>):
+The DITA source example above from <code>using_rabbitmq_service.dita</code> is an example of a file that has been designed for context switching. When the HTML5 output is displayed at runtime in the Bluemix doc framework, if the user selects to view only Ruby, elements containing the attribute <code>data-hd-programlang="ruby"</code> will be displayed, and elements with the attribute of <code>data-hd-programlang</code> that contain anything other than <code>"ruby"</code> will be hidden. Below I have created a near-equivalent version of the DITA topic in Markdown, complete with attributes that support context switching.</p>
+
+<pre><code>&lt;!-- Attribute definitions --&gt; 
+{:javascript: #javascript .ph data-hd-programlang='javascript'}
+{:java: #java .ph data-hd-programlang='java'}
+{:ruby: #ruby .ph data-hd-programlang='ruby'}
+{:shortdescription: .shortdesc}
+
+&lt;!-- Applying the above definitions to inline code tags and paragraph tags --&gt; 
+You can use the `Node.js`{: javascript} `Java`{: java} `Ruby`{: ruby} sample application to try the RabbitMQ service.
+{: shortdescription}
+
+</code></pre>
+
+<p>Output of HTML5 from Markdown parser: </p>
+
+<pre><code>&lt;p class="shortdesc"&gt;You can use the &lt;code id="javascript" class="ph" data-hd-programlang="javascript"&gt;Node.js&lt;/code&gt; &lt;code id="java" class="ph" data-hd-programlang="java"&gt;Java&lt;/code&gt; &lt;code id="ruby" class="ph" data-hd-programlang="ruby"&gt;Ruby&lt;/code&gt; sample application to try the RabbitMQ service.&lt;/p&gt;
+
+</code></pre>
+
+<h3>
+<a id="headers-and-footers" class="anchor" href="#headers-and-footers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Headers and footers</h3>
+
+<p>Bluemix needed to add copyright and metadata to the header of the HTML 5 output. We have standard header and footer files that are called during transformation.</p>
+
+<h4>
+<a id="anchor-ids-generated-for-all-headers" class="anchor" href="#anchor-ids-generated-for-all-headers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Anchor IDs Generated for all Headers</h4>
+
+<p>When the Bluemix Markdown parser transforms Markdown to HTML5, it automatically binds an anchor ID to all Header elements. Any time the parser transforms a Markdown file that contains a header, the HTML5 output of that header tag will produce an <code>id</code> attribute, with a value that is unique. Unique anchor IDs on headers provide writers with the ability to link directly to a sub-topic that begins with a Header.</p>
+
+<p>For example, here is a level 4 Header in Markdown: </p>
+
+<pre><code>####Content references in DITA vs Markdown
+</code></pre>
+
+<p>When the above Markdown is transformed into HTML5, the parser produces a unique id with a value that is equal to the name of the header:</p>
+
+<pre><code>&lt;h4 id="content-references-in-dita-vs-markdown"&gt;Content references in DITA vs Markdown&lt;/h4&gt;
+</code></pre>
+
+<p><strong>Note</strong>: Header anchor IDs are output by the Bluemix Markdown parser by default. No additional parameters or flags need to be passed to the parser when the command is run.</p>
+
+<h4>
+<a id="changing-an-anchor-id-on-a-header" class="anchor" href="#changing-an-anchor-id-on-a-header" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Changing an anchor ID on a Header</h4>
+
+<p>The Anchor ID is bound to a header by default, and it always uses the text of the header as its name, so you can always just link to that. However, any time you want to override the anchor tag of a header, you can use an attribute. See the Attribute section above for more details on using attributes.</p>
+
+<p>Example of default anchor bound to a header:</p>
+
+<p>Mardown source:
+<code>##Visualizing your data sample</code></p>
+
+<p>HTML5 output:
+<code>&lt;h2 id="visualizing-your-data-sample"&gt;Visualizing your data sample&lt;/h2&gt;</code></p>
+
+<p>Example of remapping using a simple attribute (we use the ID attribute, which is mapped with the # character):</p>
+
+<p>Markdown source:</p>
+
+<pre><code>##Visualizing your data sample
+  {: #my-renamed-anchor}
+</code></pre>
+
+<p>HTML5 output:
+<code>&lt;h2 id="my-renamed-anchor"&gt;Visualizing your data sample&lt;/h2&gt;</code></p>
+
+<p><strong>Note</strong>: You could produce the same results by making an attribute definition at the top of your file, and then you would call the name of the attribute definition, like so:</p>
+
+<pre><code>{:myanchor: #my-renamed-anchor}
+
+##Visualizing your data sample
+  {: myanchor}
+</code></pre>
+
+<h4>
+<a id="linking-to-an-anchor-id-for-a-header" class="anchor" href="#linking-to-an-anchor-id-for-a-header" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Linking to an anchor ID for a header</h4>
+
+<p>You can link directly to a header within a file using the header anchor ID. You can link to sub-headings; it does not need to be the top-level header. Use the automatically generated header value based on the text that is defined in the header (see Anchor IDs Generated for all Headers), or add your own anchor ID to use for linking (see Changing an anchor ID on a header). The following example for linking uses user-defined ID anchors for each header, and the goal is to provide a link to content that is further down in the same file.</p>
+
+<pre><code>Headings and user-defined header anchors for my file:
+
+#Bluemix
+{: #bluemix}
+
+My short description links to the [Applications heading](filename.html#header_id).
+
+##Services
+{: #services}
+
+##Applications
+{: #applications}
+
+I want to create a link within my short description that links to the second sub-heading, Applications. 
+To do this, I would use the following format: [Link text for header](filename.html#header_id). 
+For this example, I would use [Applications](readme.html#applications).
+</code></pre>
+
+<h3>
+<a id="content-references" class="anchor" href="#content-references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Content References</h3>
+
+<p>The Bluemix conref extension is invoked by the parser by using the conrefFile flag: <code>--conrefFile=cloudoeconrefs.yml</code>. </p>
+
+<blockquote>
+<p>node mdProcessor.js --sourceDir=C:\pilot\sourceMD --destDir=C:\pilot\outputMD --headerFile=header.txt --footerFile=footer.txt 
+<strong>--conrefFile=cloudoeconrefs.yml</strong> -overwrite</p>
+</blockquote>
+
+<p>Conrefs are stored in <code>cloudoeconrefs.yml</code>. <code>cloudoeconrefs.yml</code> is a YAML file, and can be placed in any directory as specified in the <code>--conrefFile</code> parameter. Typically, <code>cloudoeconrefs.yml</code> can be found in <code>C:\Users\IBM_ADMIN\Documents\GitHub\markdownProcessor</code>.</p>
+
+<p>Conref definitions in YAML are structured in nested keys, each key that contains a value or a subkey must be followed by a colon (:), and the next line must be indented 2 space. For example:</p>
+
+<pre><code> key:
+  subkey1:
+    conref value 1
+  subkey2:
+    conref value 2
+
+</code></pre>
+
+<p>Conrefs in Markdown are called by using the following syntax: <code>{{site.data.key1.key2...keyN}}</code>
+<strong>Note:</strong> While you can Nest keys as deep as you like in YAML, and call deeper sets of keys from markdown, Bluemix conrefs use only 2 keys. For example: <code>{{site.data.keyword.bluemix}}</code>  </p>
+
+<h4>
+<a id="content-references-in-dita-vs-markdown" class="anchor" href="#content-references-in-dita-vs-markdown" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Content references in DITA vs Markdown</h4>
+
+<p>In DITA, a content reference, or conref, is a way of reusing or pulling content from one file into another file; effectively making a copy during the transform. </p>
+
+<p>Example of conrefs sourced in DITA (stored in cloudoeconrefs.dita):</p>
+
+<pre><code>    &lt;!--//Do not translate - Begin--&gt;
+    &lt;p&gt;&lt;keyword id="bluemix"&gt;&lt;tm tmtype="reg" trademark="IBM"&gt;IBM&lt;/tm&gt; &lt;tm tmtype="tm" trademark="Bluemix"&gt;Bluemix&lt;/tm&gt;&lt;/keyword&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;keyword id="bluemix_short"&gt;&lt;tm tmtype="tm" trademark="Bluemix"&gt;Bluemix&lt;/tm&gt;&lt;/keyword&gt;&lt;/p&gt;
+
+</code></pre>
+
+<p>Example of a conref being called from a DITA file (called from rails.dita):</p>
+
+<pre><code>    &lt;p&gt;This Ruby starter application is a boilerplate for &lt;keyword conref="cloudoeconrefs.dita#cloudoeconrefs/bluemix_short"&gt;BlueMix&lt;/keyword&gt; Ruby web application development.&lt;/p&gt;    
+
+</code></pre>
+
+<p>In the Bluemix Markdown extension, we create a similar mechanism for reusing or pulling content from one file into another file. The extension uses YAML as a source for the conrefs.  </p>
+
+<p>Example of conrefs sourced in YAML (stored in cloudoeconrefs.yml):</p>
+
+<pre><code>    #Bluemix conref equivalent file to cloudoeconrefs.dita
+
+    #//Do not translate - Begin
+    keyword:
+      bluemix:
+        IBM&amp;reg; Bluemix&amp;trade;
+      bluemix_short:
+        Bluemix&amp;trade;
+      IBM:
+        IBM&amp;reg;
+      cloudoe:
+        Cloud Operating Environment
+      domainname:
+        DomainName
+      Appdomainname:
+        AppDomainName
+    #Service names
+      activedeployshort:
+        Active Deploy
+      amashort:
+        Advanced Mobile Access
+      activedeployshort:
+        Active Deploy
+      amashort:
+        Advanced Mobile Access
+
+</code></pre>
+
+<p>Example of conrefs called from Markdown (called from test.md):</p>
+
+<pre><code>    This is a new paragraph all about using conrefs. This word here: {{site.data.keyword.bluemix}} is actually a conref! I can use {{site.data.keyword.bluemix}} multiple times in a paragraph. 
+    * I can use the full product name: {{site.data.keyword.bluemix}}
+    * Or I can use the shortened product name: {{site.data.keyword.bluemix_short}}
+    * {{site.data.keyword.activedeployshort}} is a Service. 
+    * So is {{site.data.keyword.amashort}}
+
+</code></pre>
+
+<p>Results:</p>
+
+<pre><code>     This is a new paragraph all about using conrefs. This word here: IBM® Bluemix™ is actually a conref! I can use IBM® Bluemix™ multiple times in a paragraph.
+
+        I can use the full product name: IBM® Bluemix™
+        Or I can use the shortened product name: Bluemix™
+        Active Deploy is a Service.
+        So is Advanced Mobile Access
+
+</code></pre>
+
+<h3>
+<a id="toc-file" class="anchor" href="#toc-file" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TOC File</h3>
+
+<p>In addition to the standard HTML5 output that the Bluemix Markdown parser produces from each Markdown file, the parser also produces a Table of Contents file in different formats. Each TOC file produced from a markdown topic contains a nested set of structured headers or topicrefs that match the structure of headers in the original markdown source. Each TOC header or topicref also contains a link to a corresponding header anchor ID in the HTML5 output file that was generated from the Markdown source.</p>
+
+<p>By default, for each Markdown file processed by the Bluemix parser, the following files are output:</p>
+
+<p><strong>Source:</strong> <code>index.md</code></p>
+
+<p><strong>Output:</strong></p>
+
+<ul>
+<li>
+<code>index.HTML</code>: standard HTML5 output</li>
+<li>
+<code>indexTOC.md</code>: Markdown file with nested Headers matching each Header in index.md. Each Header contains a link to  a corresponding header anchor ID in index.HTML</li>
+<li>
+<code>indexTOC.HTML</code>: HTML file with nested Headers matching each Header in index.md. Each Header contains a link to  a corresponding header anchor ID in index.HTML</li>
+<li>
+<code>index.ditamap</code>: DITA map file with nested topicrefs matching each Header in index.md. Each topicref contains a link to  a corresponding header anchor ID in index.HTML</li>
+</ul>
+
+<p><strong>Note:</strong> Each TOC format is produced and structured following the conventions of that format. Because DITA map files enforce a strict rule where headers must be incremented by only a single level, any Headers in your markdown that skip a level, (for example, H1 to H3, skipping H2), will not produce a valid *.ditamap TOC. Header values can decrease by skipping a level, (for example, H3 to H1, skipping H2), but they cannot increase.</p>
+
+<p><strong>Note</strong>: TOC files are output by the Bluemix Markdown parser by default. No additional parameters or flags need to be passed to the parser when the command is run. To disable TOC files, add the following parameter: <code>-disableToc</code></p>
+
+<h3>
+<a id="accessible-output" class="anchor" href="#accessible-output" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Accessible output</h3>
+
+<p>We have worked to output all Markdown markup to standard and valid HTML5 tags:</p>
+
+<ul>
+<li>Alt text for images: Included as part of the Markdown tagging for images</li>
+<li>Header row in tables: Output turns the first row into <code>&lt;thead&gt;</code>
+</li>
+<li>Elements having a WAI-ARIA 'article' role must have a label specified with aria-label or aria-labelledby.</li>
+<li>Use header elements where appropriate: Pass thru HTML tagging when Markdown markup is not available, for example definition lists (dl, dt, dd)</li>
+<li>There must be a non-empty title element in the head of the document: For the HTML output from Markdown, the <code>&lt;head&gt;</code> element does not contain a <code>&lt;title&gt;</code> element. We added this with a header file.</li>
+</ul>
+
+<p>Additional accessibility <em>might</em> be needed as content is migrated to Markdown. And, as a result, updates to the parser and/or to the markup recommendations <em>might</em> be required.</p>
+
+<h3>
+<a id="additional-functionality" class="anchor" href="#additional-functionality" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Additional functionality</h3>
+
+<ul>
+<li>Copy of non-.md files: Copies (doesn't process) image files (.bmp, .jpg, .png, .gif, .SVG) and other file extensions like .html, .pdf, .json, .js</li>
+<li>Recurse sub-directories: Processes all directories in the specified source directory</li>
+<li>Overwrite: Addition of an overwrite flag to replace previous output</li>
+</ul>
+
+<h3>
+<a id="tips-for-avoiding-common-errors" class="anchor" href="#tips-for-avoiding-common-errors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tips for avoiding common errors</h3>
+
+<ol>
+<li>Using HTML within your Markdown topics is allowed, and in some cases encouraged (the only way to output a definition list is by using HTML). However, if you chose to use HTML, <strong>always ensure your HTML is well-formed</strong>. Any tag that does not have a closing tag associated with it will break the parser, and your build will fail. For example, the only way that you can create a line break inside a table cell in Markdown is to use a break tag, however, using <code>&lt;br&gt;</code> will actually break the build. You must close the break tag like so: <code>&lt;br/&gt;</code>. If you use HTML, carefully validate that your tags are matching and that you close all open tags.</li>
+<li>Avoid using <code>&lt;</code> and <code>&gt;</code>. For all special characters, it is recommended that you use the <code>&amp;</code> value. For example, for <code>&gt;</code> use <code>&amp;gt;</code>.  All of the following special characters are also supported: (<a href="http://www.w3.org/MarkUp/HTMLPlus/htmlplus_13.html">http://www.w3.org/MarkUp/HTMLPlus/htmlplus_13.html</a>)</li>
+</ol>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/YOTOV-LIMITED/docs-1">Docs-1</a> is maintained by <a href="https://github.com/YOTOV-LIMITED">YOTOV-LIMITED</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
